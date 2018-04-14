@@ -13,13 +13,11 @@ function chatBot() {
 	 * @param input - input chat string
 	 * @return reply of chat-bot
 	 */
-	this.respondTo = function(input) {
+	this.respondTo = function(input, num) {
 
 		this.input = input.toLowerCase();
-
-		if(this.match('(usc|uga|v|vs)(\\s|!|\\.|$)'))
-			return "Okay, I found some options for you please click below:";
-	        		
+		if(num == 0)
+			return "Thanks "+input+",\nWhat sporting event are you planning to attend?";
 	}
 
 	/**

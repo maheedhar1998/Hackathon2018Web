@@ -2,8 +2,12 @@ $(function() {
 
 	// chat aliases
 	var you = 'You';
-	var robot = 'Fan Plan';
-
+	var robot = 'Travel Bot';
+	var name = '';
+	var email = '';
+	var phoneNumber = 0;
+	var count = 0;
+	var gloCount = 0;
 	// slow reply by 400 to 800 ms
 	var delayStart = 400;
 	var delayEnd = 800;
@@ -22,8 +26,17 @@ $(function() {
 
 		$('.input input').val('');
 		updateChat(you, input);
-
-		var reply = bot.respondTo(input);
+		if(count == 0)
+			name = input;
+		if(count == 1)
+			email = input;
+		if(count == 2)
+			phoneNumber = input;
+		count++;
+		if(count == 3)
+			var reply = bot.respondTo(input, gloCount);
+		gloCount++;
+			var but = $('<button style="background: url(https://www.prlog.org/12190100-ugapartybus-by-wgirls-atlanta-georgia-carolina-game-2013-wwwugapartybusorg.jpg)" />');
 		if(reply == null) return;
 
 		var latency = Math.floor((Math.random() * (delayEnd - delayStart)) + delayStart);
@@ -68,6 +81,6 @@ $(function() {
 	$('.input a').bind('click', submitChat);
 
 	// initial chat state
-	updateChat(robot, 'Hi there. How can I make your travel plans easier!');
+	updateChat(robot, 'Hello, My name is '+robot+'\nI am your virtual travel agent, to take care of your tickets, flights, hotels, and other requests.\nTo start..What is your name, email, phone number');
 
 });
