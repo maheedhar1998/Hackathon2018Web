@@ -11,8 +11,8 @@ body {
 }
 
 .container {
-	width: maxWidth;
-	height: maxLength;
+	width: 600px;
+	height: 600px;
 	margin: 50px auto 20px;
 }
 
@@ -70,7 +70,7 @@ body {
 	float: left;
 	border: 1px solid #ccc;
 	padding: 5px;
-	width: 480px;
+	width: 80%;
 	margin: 0;
 	border-radius: 5px;
 }
