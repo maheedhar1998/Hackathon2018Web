@@ -17,8 +17,9 @@ function chatBot() {
 
 		this.input = input.toLowerCase();
 
-		if(this.match('(usc|uga|v|vs|howdy)(\\s|!|\\.|$)'))
+		if(this.match('(usc|uga|v|vs)(\\s|!|\\.|$)'))
 			return "Okay, I found some options for you please click below:";
+	        		
 	}
 
 	/**
